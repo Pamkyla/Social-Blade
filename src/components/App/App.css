@@ -1,0 +1,22 @@
+body {
+    background-color: lightgray;
+}
+
+.App {
+    max-width: 1260px;
+    margin: 0 auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.main {
+    display: flex;
+    width: 100%;
+}
+
+.section {
+    margin-right: 20px;
+}
+
+
+

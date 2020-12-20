@@ -1,0 +1,18 @@
+.nav_menu {
+    background: #333;
+    line-height: 50px;
+    display: flex;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.nav_item {
+    color: #fff;
+    list-style: none;
+    padding: 0px 15px;
+    cursor: pointer;
+}
+
+.nav_item:hover {
+    background-color: #555;
+}
