@@ -1,9 +1,10 @@
 .sidebar_image {
     max-width: 100%;
-    max-height: 17vh;
 }
 
-.sidebar_item {
-    margin-bottom: 20px;
-    display: flex;
+.sidebar_block_item {
+    padding: 30px 15px;
+    margin: 0 5px;
+    text-align: center;
+    background: #ebebeb;
 }

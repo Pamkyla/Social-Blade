@@ -2,7 +2,7 @@ table {
     width: 100%;
 }
 
-caption  {
+.table_name  {
     background: #333;
     color: #fff;
     text-align: start;

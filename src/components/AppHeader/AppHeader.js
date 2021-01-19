@@ -13,7 +13,7 @@ class AppHeader extends React.Component {
                     <img className="user_avatar" src={avatar} alt="Avatar" />
                     <div className="user_info_block">
                         <div className="user_name">
-                            <h2>CS:GO BEST MOMENTS</h2>
+                            <h2></h2>
                             <div className="user_badge">
                                 <i><img src="https://img.icons8.com/dotty/20/000000/widgetsmith.png" alt="badge"/></i>
                                 <i><img src="https://img.icons8.com/dotty/20/000000/widgetsmith.png" alt="badge"/></i>
@@ -48,7 +48,6 @@ class AppHeader extends React.Component {
                                 <p>User Created</p>
                                 <span>864</span>
                             </div>
-                            <button className ="partnership_btn">Apply for YouTube Partnership</button>
                         </div>
                     </div>
                 </div>

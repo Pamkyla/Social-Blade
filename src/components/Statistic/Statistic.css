@@ -3,43 +3,28 @@
 }
 
 .statistic {
-    display: flex;
     margin-bottom: 10px;
     justify-content: space-between;
 }
 
-.grade_block {
-    padding: 30px 35px;
-    background: #eaa001;
-    border-radius: 4px;
-    font-weight: bold;
-    text-align: center;
-    color: #fff;
-}
-
-.grade_block h2 {
-    font-size: 4.5em;
-}
-
 .statistic_block {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
     padding: 10px;
     background: #fff;
     border-bottom: 2px solid #e2e2e2;
 }
 
 .statistic_block_item {
+    max-width: calc(100%/3 - 10px);
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 30px 15px;
-    border-right: 1px solid #eee;
     margin: 5px;
     text-align: center;
-}
-
-.statistic_block_item:last-child {
-    border: none;
+    border: 1px solid #ebebeb;
 }
 
 .statistic_block_item span {

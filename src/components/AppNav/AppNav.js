@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 import './AppNav.css';
 
 class AppNav extends React.Component {
@@ -7,14 +7,10 @@ class AppNav extends React.Component {
         return (
             <div className="AppNav">
                 <ul className="nav_menu">
-                    <li className='nav_item'>User bla bla</li>
-                    <li className='nav_item'>User bla bla</li>
-                    <li className='nav_item'>User bla bla</li>
-                    <li className='nav_item'>User bla bla</li>
-                    <li className='nav_item'>User bla bla</li>
-                    <li className='nav_item'>User bla bla</li>
-                    <li className='nav_item'>User bla bla</li>
-                    <li className='nav_item'>User bla bla</li>
+                    <Link to="/"><li className='nav_item'>Login</li></Link>
+                    <Link to="/App"><li className='nav_item'>Main</li></Link>
+                    <li className='nav_item'>Statistic</li>
+                    <li className='nav_item'>Spreadsheet</li>
                 </ul>
             </div>
         )
