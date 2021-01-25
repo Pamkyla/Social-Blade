@@ -1,4 +1,5 @@
 import React from 'react';
+import Loader from '../../../services/Loader';
 import StatsService from '../../../services/StatsService';
 
 import './AppHeader.css';
@@ -30,7 +31,7 @@ class AppHeader extends React.Component {
         if (totalSubs === undefined) {
             return (
                 <>
-                    Loading...
+                   <Loader />
                 </>
             )
         }

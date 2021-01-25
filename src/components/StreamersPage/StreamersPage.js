@@ -3,6 +3,7 @@ import React from 'react';
 import './StreamersPage.css';
 import { Link } from 'react-router-dom';
 import StreamersItem from './StreamersItem';
+import Loader from '../../services/Loader';
 
 class StreamersPage extends React.Component {
 
@@ -26,7 +27,7 @@ class StreamersPage extends React.Component {
         if (nicknameList === undefined) {
             return (
                 <>
-                    Loading...
+                   <Loader />
                 </>
             )
         }

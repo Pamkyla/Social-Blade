@@ -4,6 +4,7 @@ import './Statistic.css';
 
 import StatisticItem from '../StatisticItem';
 import StatsService from '../../../services/StatsService';
+import Loader from '../../../services/Loader';
 
 class Statistic extends React.Component {
 
@@ -31,7 +32,7 @@ class Statistic extends React.Component {
         if (i === undefined) {
             return (
                 <>
-                    Loading...
+                   <Loader />
                 </>
             )
         }

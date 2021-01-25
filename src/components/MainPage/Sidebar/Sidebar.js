@@ -4,6 +4,7 @@ import './Sidebar.css';
 
 import SidebarItem from '../SidebarItem';
 import StatsService from '../../../services/StatsService';
+import Loader from '../../../services/Loader';
 
 class Sidebar extends React.Component {
 
@@ -31,7 +32,7 @@ class Sidebar extends React.Component {
         if (i === undefined) {
             return (
                 <>
-                    Loading...
+                    <Loader />
                 </>
             )
         }

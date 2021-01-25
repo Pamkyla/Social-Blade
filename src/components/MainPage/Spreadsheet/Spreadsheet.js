@@ -1,4 +1,5 @@
 import React from 'react';
+import Loader from '../../../services/Loader';
 import StatsService from '../../../services/StatsService';
 
 import './Spreadsheet.css';
@@ -27,7 +28,7 @@ class Spreadsheet extends React.Component {
         if (i === undefined) {
             return (
                 <>
-                    Loading...
+                   <Loader />
                 </>
             )
         }
