@@ -1,11 +1,39 @@
 import React from 'react';
+import StatsService from '../../../services/StatsService';
 
 import './AppHeader.css';
 
 import avatar from './boom.jpg';
 
 class AppHeader extends React.Component {
+
+    service = new StatsService();
+
+    state = {
+        Data: [],
+        nickname: this.props.nickname
+    };
+
+    componentDidMount = async () => {
+        const nickname = this.state.nickname.nickname;
+        const user_data = await this.service.getUser(`${nickname}`);
+        this.setState({ Data: user_data });
+    }
+
     render() {
+
+        const Data = this.state;
+        const userData = Data.Data;
+        const nickname = this.state.nickname.nickname;
+        const { totalSubs } = userData;
+
+        if (totalSubs === undefined) {
+            return (
+                <>
+                    Loading...
+                </>
+            )
+        }
 
         return (
             <div className="AppHeader">
@@ -13,7 +41,7 @@ class AppHeader extends React.Component {
                     <img className="user_avatar" src={avatar} alt="Avatar" />
                     <div className="user_info_block">
                         <div className="user_name">
-                            <h2></h2>
+                            <h2>{nickname}</h2>
                             <div className="user_badge">
                                 <i><img src="https://img.icons8.com/dotty/20/000000/widgetsmith.png" alt="badge"/></i>
                                 <i><img src="https://img.icons8.com/dotty/20/000000/widgetsmith.png" alt="badge"/></i>
@@ -26,15 +54,15 @@ class AppHeader extends React.Component {
 
                             <div className="info_block">
                                 <p>Uploads</p>
-                                <span>864</span>
+                                <span>0</span>
                             </div>
                             <div className="info_block">
                                 <p>Subsribers</p>
-                                <span>434K</span>
+                                <span>{totalSubs}</span>
                             </div>
                             <div className="info_block">
                                 <p>Video Views</p>
-                                <span>864</span>
+                                <span>0</span>
                             </div>
                             <div className="info_block">
                                 <p>Country</p>
@@ -46,7 +74,7 @@ class AppHeader extends React.Component {
                             </div>
                             <div className="info_block">
                                 <p>User Created</p>
-                                <span>864</span>
+                                <span>0</span>
                             </div>
                         </div>
                     </div>

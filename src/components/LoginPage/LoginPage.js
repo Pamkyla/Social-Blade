@@ -4,18 +4,42 @@ import { Link } from 'react-router-dom';
 
 import './LoginPage.css';
 
+
 class LoginPage extends React.Component {
-    render() {
-        return (
-            <div className="LoginPage">
-                <form>
-                    <input type='text'></input>
-                    <input type='password'></input>
-                    <Link to="/App"><button type='submit'>Submit</button></Link>
-                </form>
-            </div>
-        )
-    }
+
+
+  constructor(props) {
+    super(props);
+    this.state = { value: ['Defloot1'] };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({ value: event.target.value });
+  }
+
+
+
+  handleSubmit() {
+    let nickname = this.state.value;
+    this.props.changeNickname(`${nickname}`);
+  }
+
+  render() {
+
+
+
+    return (
+      <form >
+        <label>
+          Имя:
+              <input type="text" value={this.state.value} onChange={this.handleChange} placeholder='Enter your name' />
+        </label>
+        <Link to="/main"><input type="button" value="Submit" onClick={this.handleSubmit} /></Link>
+      </form>
+    );
+  }
 }
 
 export default LoginPage;

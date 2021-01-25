@@ -1,0 +1,9 @@
+.streamers_block_item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px 15px;
+    margin: 5px;
+    text-align: center;
+    border: 1px solid #ebebeb;
+}

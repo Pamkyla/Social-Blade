@@ -2,18 +2,33 @@ import React from 'react';
 
 import './Sidebar.css';
 
-import image from '../AppHeader/boom.jpg'
 import SidebarItem from '../SidebarItem';
+import StatsService from '../../../services/StatsService';
 
 class Sidebar extends React.Component {
+
+    service = new StatsService();
+
+    state = {
+        Data: [],
+        nickname: this.props.nickname
+    };
+
+    componentDidMount = async () => {
+        const nickname = this.state.nickname.nickname;
+        const user_data = await this.service.getUser(`${nickname}`);
+        this.setState({ Data: user_data });
+    }
+
+
     render() {
         
-        const Data = this.props;
-        const Data_local = Data.Data;
-        const { messagePerMonth } = Data_local;
+        const Data = this.state;
+        const userData = Data.Data;
+        const { messagePerMonth } = userData;
         const i = messagePerMonth;
 
-        if (i == undefined) {
+        if (i === undefined) {
             return (
                 <>
                     Loading...
@@ -23,8 +38,9 @@ class Sidebar extends React.Component {
 
         const data = messagePerMonth.data;
         const elements = data.map((element) => {
+        const key = element.sentTo[0].message_id;
             return (
-                <div key={element} className="sidebar_block_item">
+                <div key={key} className="sidebar_block_item">
                     <SidebarItem
                         element={element}
                     />

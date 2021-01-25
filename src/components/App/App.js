@@ -1,62 +1,45 @@
 import React from 'react';
 
-import AppHeader from '../AppHeader';
-import AppNav from '../AppNav';
-import Statistic from '../Statistic';
-
 import './reset.css';
 import './App.css';
-import Spreadsheet from '../Spreadsheet';
-import Sidebar from '../Sidebar';
-import StatisticContext from '../StatisticContext'
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import StatisticContext from '../../services/StatisticContext'
+import { BrowserRouter as Router } from 'react-router-dom';
 import LoginPage from '../LoginPage';
+import StreamersPage from '../StreamersPage';
+import MainPage from '../MainPage/MainPage';
 
 class App extends React.Component {
 
   state = {
-    Data: []
+    Data: [],
+    nickname: 'Defloot1'
   };
 
-
-
-  componentDidMount() {
-    const URL = "http://localhost:4000/getData?streamerNickname=Defloot1";
-
-
-    fetch(URL).then(res => res.json()).then(json => {
-      this.setState({ Data: json });
-      console.log(this.state);
-    });
-  }
-
   render() {
-    const { Data } = this.state;
+    const nickname = this.state.nickname;
     const Route = require("react-router-dom").Route;
+
+    let changeNickname = (nickname) => {
+      this.setState({ nickname: `${nickname}` });
+    }
+
     return (
-      
+
       <StatisticContext.Provider>
         <Router>
+
           <Route path="/" exact>
-            <LoginPage />
+            <LoginPage changeNickname = {changeNickname}/>
           </Route>
-          <Route path="/App" >
-            <div className="App">
-              <header>
-                <AppHeader/>
-                <AppNav />
-              </header>
-              <main className="main">
-                <section className="section">
-                  <Statistic Data={Data} />
-                  <Spreadsheet  Data={Data} />
-                </section>
-                <aside className="aside">
-                  <Sidebar Data={Data} />
-                </aside>
-              </main>
-            </div>
+
+          <Route path="/admin">
+            <StreamersPage changeNickname = {changeNickname} />
           </Route>
+
+          <Route path="/main" >
+            <MainPage nickname={nickname} />
+          </Route>
+
         </Router>
       </StatisticContext.Provider>
     );
