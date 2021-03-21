@@ -12,7 +12,7 @@ class App extends React.Component {
 
   state = {
     Data: [],
-    nickname: 'Defloot1'
+    nickname: 'Defloot'
   };
 
   render() {

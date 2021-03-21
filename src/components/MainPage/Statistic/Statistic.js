@@ -2,7 +2,7 @@ import React from 'react';
 
 import './Statistic.css';
 
-import StatisticItem from '../StatisticItem';
+import StatisticItem from './StatisticItem';
 import StatsService from '../../../services/StatsService';
 import Loader from '../../../services/Loader';
 

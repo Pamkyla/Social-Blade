@@ -1,7 +1,5 @@
 import React from 'react';
 
-import './SidebarItem.css';
-
 class SidebarItem extends React.Component {
     render() {
         const { element } = this.props;

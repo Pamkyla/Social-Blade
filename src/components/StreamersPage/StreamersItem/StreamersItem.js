@@ -1,7 +1,5 @@
 import React from 'react';
 
-import './StreamersItem.css';
-
 class StreamersItem extends React.Component {
 
 

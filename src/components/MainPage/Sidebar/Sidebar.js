@@ -2,7 +2,7 @@ import React from 'react';
 
 import './Sidebar.css';
 
-import SidebarItem from '../SidebarItem';
+import SidebarItem from './SidebarItem';
 import StatsService from '../../../services/StatsService';
 import Loader from '../../../services/Loader';
 

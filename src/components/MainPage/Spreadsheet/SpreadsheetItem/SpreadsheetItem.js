@@ -1,7 +1,5 @@
 import React from 'react';
 
-import './SpreadsheetItem.css';
-
 class SpreadsheetItem extends React.Component {
 
     render() {

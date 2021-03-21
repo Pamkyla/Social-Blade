@@ -10,7 +10,7 @@ class LoginPage extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { value: ['Defloot1'] };
+    this.state = { value: ['Ant1ka'] };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }

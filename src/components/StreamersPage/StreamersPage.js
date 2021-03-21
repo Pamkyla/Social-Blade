@@ -35,6 +35,7 @@ class StreamersPage extends React.Component {
         const data = nicknameList.nickname;
 
         let handleSubmit = (event) => {
+            console.log();
             this.props.changeNickname(`${event.target.innerHTML}`);
         }
 
